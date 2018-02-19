@@ -150,7 +150,17 @@ function updateGrid() {
         }
     }
 
+   
+	//trying to fix my weird edges
+    for (var l = 1; l < gridHeight; l++) { //iterate through rows
+        //top and bottom
+        secondGrid[l][0] = secondGrid[l][gridHeight - 3];
+        secondGrid[l][gridHeight - 2] = secondGrid[l][1];
+        //left and right
+        secondGrid[0][l] = secondGrid[gridHeight - 3][l];
+        secondGrid[gridHeight - 2][l] = secondGrid[1][l];
 
+    }
 
 
     //swap grids
