@@ -2,8 +2,8 @@ var gridHeight = 400; //be careful with these numbers
 var gridWidth = 400;
 var theGrid = createArray(gridWidth);
 var mirrorGrid = createArray(gridWidth);
-var c = document.getElementById("myCanvas");
-var ctx = c.getContext("2d");
+var canvas = document.getElementById("myCanvas");
+var ctx = canvas.getContext("2d");
 ctx.scale(4, 4);
 var count = 0;
 
@@ -137,8 +137,8 @@ function updateGrid() { //perform one iteration of grid update
         }
     }
 
-    //mirror edges to create wraparound effect
-
+   
+	//trying to fix my weird edges
     for (var l = 1; l < gridHeight; l++) { //iterate through rows
         //top and bottom
         mirrorGrid[l][0] = mirrorGrid[l][gridHeight - 3];
